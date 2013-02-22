@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <title>Meet the 7 Billion - Lynn Kiang</title>
+  <link rel="icon" type="image/ico" href="../images/favicon.ico">    
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../stylesheets/foundation.css">
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <script type="text/javascript" src="../javascripts/respond.min.js"></script>  
+  <script type="text/javascript" src="../javascripts/modernizr.foundation.js"></script>
+  <script type="text/javascript" src="../javascripts/foundation.min.js"></script>
+  <script type="text/javascript" src="../javascripts/waypoints.min.js"></script>
+  <script type="text/javascript" src="../javascripts/waypoints-sticky.js"></script>
+  <script type="text/javascript" src="../javascripts/transitions.js"></script>      
+  <!-- Google Web Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400italic|Lusitana|Karla:700,400italic,400' rel='stylesheet' type='text/css'>	  
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18817510-4']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+  </script>	
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="left_bar">
+			<div id="fixed-left-arrow">
+				<a class="transition my-sticky-element" href="eisenhower-memorial.html" alt="Go to Previous Project" title="Go to Previous Project"></a>
+			</div>
+		</div>
+		<div id="right_bar">
+			<div id="fixed-right-arrow">
+				<a class="transition my-sticky-element" href="1930s.html" alt="Go to Next Project" title="Go to Next Project"></a>
+			</div>
+		</div>
+	   <header class="row">
+	    	<div class="twelve columns">
+		    	<nav class="top-bar">
+			    	<ul class="logo sprite-nationalgeo">
+				    	<li><a href="../index.html"></a></li>
+				    </ul>
+				    <section>
+					    <ul class="right">	
+						    <li><a class="active" href="../index.html">Work</a></li>
+						    <li><a href="../about.html">About</a></li>
+						</ul>
+					</section>
+				</nav>
+	    	</div>
+	   </header>     
+	   
+	   <div class="divider"></div>
+       <div class="row">
+	    	<div id="project-desc-container" class="four columns">
+	    		<div id="project-desc" class="my-sticky-element">
+			   		<h3 class="project-page">Meet the 7 Billion</h3>
+		    		<section class="hide-for-small">
+			    		<p>30" x 20" Poster for the National Geographic representing the growing global population. Seven population ranges are represented by a specific circle color and size. Made in collaboration with Fathom Information Design.</p>    	
+	
+		    			<div class="divider short"></div>
+	
+		    			<dl>
+		    				<dd>CLIENT</dd>
+		    				<dt>National Geographic</dt>
+		    			</dl>
+		    			
+		    			<div class="divider short"></div>
+		    					    			
+		    			<dl>
+		    				<dd>IMAGE CREDIT</dd>
+		    				<dt>Fathom Information Design</dt>
+		    			</dl>
+		    		</section>
+	    		</div>
+	    	</div>
+	    	<div class="eight columns">
+	    		<ul class="no-bullet screenshot-list">
+	    			<li><img src="../images/projects/nationalgeo1.jpg" alt="National Geographic Image #1"></li>
+	    			<li><img src="../images/projects/nationalgeo2.jpg" alt="National Geographic Image #2"></li>
+	    			<li><img src="../images/projects/nationalgeo3.jpg" alt="National Geographic Image #3"></li>
+	    			<li><img src="../images/projects/nationalgeo4.jpg" alt="National Geographic Image #4"></li> 			
+	    		</ul>
+	    	</div>
+	    	<div class="hide-for-medium hide-for-large hide-for-large-up hide-for-xlarge hide-for-print four columns">
+	    		<div class="divider"></div>
+	    		<p>30" x 20" Poster for the National Geographic representing the growing global population. Seven population ranges are represented by a specific circle color and size. Made in collaboration with Fathom Information Design.</span></p> 
+
+    			<div class="divider short"></div>
+	    		   	
+				<dl>
+    				<dd>CLIENT</dd>
+    				<dt>National Geographic</dt>
+    			</dl>
+    			
+    			<div class="divider short"></div>
+    					    			
+    			<dl>
+    				<dd>IMAGE CREDIT</dd>
+    				<dt>Fathom Information Design</dt>
+    			</dl>
+			</div>	
+		</div>	
+	</div> <!-- #wrapper -->
+	<footer>
+    	<p>&#169; 2013 Lynn Kiang. All Rights Reserved.</p>
+    </footer>
+   <!-- Call sticky elements script, and set width of Project Descriptions to percentage of .four .columns when position: fixed -->
+    <script type="text/javascript">    
+    	$(document).ready(function() {
+	    	
+	    	$('#project-desc').waypoint(function(){
+				$('#project-desc').css('width', $('#project-desc-container').width() + 'px');
+			}, {offset: 30 });
+
+	    	$('.my-sticky-element').waypoint('sticky', {
+		    	offset: 30 
+		    });
+		    		    
+	    });
+				
+		$(window).resize(function() {
+			$('#project-desc').css('width', $('#project-desc-container').width() + 'px');		
+		});
+	</script>
+</body>

@@ -1,0 +1,233 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Home Page
+:: About Page
+:: Project Pages
+:: Responsive Styles
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body { /* overflow: hidden; */}
+h3 { font-family: 'Karla', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1em; color: rgb(128,128,128); margin: 0.575em 0 0.2em 0;}
+h4 { font-family: 'Sorts Mill Goudy', Times, serif; font-weight: 400; font-style: italic; font-size: 0.875em; color: rgb(128,128,128); margin: 0 0 2.8em 0; max-width: 13.75em;}
+
+p { font-family: 'Karla', Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.3; }
+p span { font-style: italic; }
+
+dl { margin: 0; }
+#about h2, dd { font-family: 'Lusitana', Times, serif; font-size: 0.75em; font-weight: 600; letter-spacing: 0.125em; }
+dt { font-family: 'Sorts Mill Goudy', Times, serif; font-weight: 400; font-style: italic; font-size: 1em; line-height: 1.3; }
+
+#wrapper { max-width: 1160px; margin: 0 auto; padding: 0 100px; min-height: 100%; padding-bottom: 6.25em; }
+
+nav { font-family: 'Lusitana', Times, serif; }
+nav ul.right { margin-top: 6.90em; }
+.top-bar ul li { line-height: 1; }
+.right li { margin-left: 3.25em; }
+
+a.active { color: #1a1a1a; } 
+a.active:hover { color: #2bfed4; }
+
+
+.divider { border: solid #dddddd; border-width: 1px 0 0; clear: both; margin: 1.5625em 10px; height: 0; }
+.short { width: 20%; border: solid #dddddd; border-width: 1px 0 0; margin: 0.625em 0;}
+.short.centered { margin: 0.625em auto; }
+
+footer { width: 100%; text-align: center; background: black; color: rgb(128,128,128); margin-top: -41px; position: relative; clear: both; }
+footer p{ font-size: 0.625em; padding: 1.5625em; margin-bottom: 0; }
+
+/* -----------------------------------------
+   Home Page
+----------------------------------------- */
+
+/*-- Hover over project thumbnails on homepage --*/
+img.thumbnail { transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-backface-visibility: hidden; }
+img.thumbnail:hover { 
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Long code just for Firefox 3.5+ */
+	filter: gray; /* IE6-9 */
+	filter: grayscale(1); 
+		-webkit-filter: grayscale(1);
+		-moz-filter: grayscale(1);
+		-ms-filter: grayscale(1);
+		-o-filter: grayscale(1);
+		}
+
+/* --------------------------------
+	Orbit Customizations
+----------------------------------*/
+/*--Hide Orbit while Loading ------- */
+#featured { background: url(../images/foundation/orbit/loading.gif) center center #000000 no-repeat; height: 300px; }
+#featured img { display: none; }
+#featured.orbit { background: none; }
+#featured.orbit img { display: block; }
+
+/*--Hide loading icon--------*/
+.orbit-wrapper .timer { display: none; }
+
+/*--Arrows on hover---------*/
+.orbit-wrapper .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition: opacity 400ms; -moz-transition: opacity 400ms; -o-transition: opacity 400ms; transition: opacity 400ms; }
+.orbit-wrapper:hover .slider-nav span { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
+
+.orbit-wrapper .slider-nav span { width: 50px; height: 49px; text-indent: -9999px; position: absolute; z-index: 30; top: 50%; margin-top: -25px; cursor: pointer; }
+
+.nosvg .orbit-wrapper .slider-nav span.right { background: url('../images/foundation/orbit/right-arrow.png') 0 -50px no-repeat; right: 10px; }
+.nosvg .orbit-wrapper .slider-nav span.left { background: url('../images/foundation/orbit/left-arrow.png') 0 -50px	 no-repeat; left: 10px; }
+
+html.svg .orbit-wrapper .slider-nav span.right { background: url('../images/arrow_rt_sprite.svg') 0 -50px no-repeat; right: 10px; }
+html.svg .orbit-wrapper .slider-nav span.left { background: url('../images/arrow_lt_sprite.svg') 0 -50px no-repeat; left: 10px; }
+
+.lt-ie9 .orbit-wrapper .slider-nav span.right { background: url('../images/foundation/orbit/right-arrow-small.png') 0 -25px no-repeat; }
+.lt-ie9 .orbit-wrapper .slider-nav span.left { background: url('../images/foundation/orbit/left-arrow-small.png') 0 -25px no-repeat; }
+
+
+/* --------------------------------
+	Logos - Multiple backgrounds used in order to hide the slight differences between the home logo and the others that could not be removed from the source files
+----------------------------------*/
+
+.logo a { display: block; width: 90px; height: 130px; -webkit-transition: opacity 0.2s ease-in; -moz-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; }
+	.about-page a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -360px;} 
+	.sprite-1930s a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: 0 0; } 
+	.sprite-5050 a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -180px; } 
+	.sprite-beacon a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: 0 -540px; } 
+	.sprite-casual a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -720px; } 
+	.sprite-cma a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: 0 -900px; } 
+	.sprite-fathom a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -1080px; } 
+	.sprite-home a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -1260px; } 
+	.sprite-ike a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -1440px; } 
+	.sprite-lexicon a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: 0 -1620px; } 
+	.sprite-nationalgeo a { background-image: url(../images/logos/logos.png); background-color: white; background-position: 0 -1800px; } 
+	.sprite-ninthhour a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: -140px 0px; } 
+	.sprite-quotes a { background-image: url(../images/logos/logos.png); background-color: white; background-position: -140px -180px; } 
+	.sprite-risd a { background-image: url(../images/logos/logos.png); background-color: white; background-position: -140px -360px; } 
+	.sprite-thesis a { background-image: url(../images/logos/logos.png); background-color: white; background-position: -140px -540px; } 
+	.sprite-typehigh a { background-image: url(../images/logos/logos.png), url(../images/outlets.png); background-position: -140px -720px; } 
+	
+.logo a:hover { opacity: 0; }
+
+.logo li { display: block; width: 90px; height: 130px; background-image: url(../images/logos/logos.png); background-position: 0 -1260px; }
+
+/* -----------------------------------------
+   About Page
+----------------------------------------- */
+
+#about h2 { margin-bottom: 0.3em; }
+img.profile-photo { margin-bottom: 1.5625em; }
+p.blurb { font-family: 'Lusitana', Times, serif; font-size: 1.3125em; }
+.margin-zero { margin-bottom: 0; }
+@media only screen and (max-width: 780px) {
+	p.blurb { text-align: center; margin-bottom: 0;}
+}
+
+#about div.lists, a.twitter-handle { font-family: 'Karla', Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.3; }
+ul.clients { font-family: 'Karla', Helvetica, Arial, sans-serif; line-height: 20px; }
+ul.small-line-height { line-height: 1.3; }
+	/* Twitter feed styling */
+#twitter_update_list { list-style: none; }
+#twitter_update_list li { line-height: 1.15; }
+#twitter_update_list li span { font-family: 'Sorts Mill Goudy', Times, serif; font-weight: 400; font-style: italic; }
+#twitter_update_list li span a { color: #808080; }
+#twitter_update_list li > a:last-of-type { font-family: 'Sorts Mill Goudy', Times, serif; font-weight: 400; font-size: 10px; display: block; }
+
+
+/* -----------------------------------------
+   Project Pages
+----------------------------------------- */
+h3.project-page { color: rgb(28,28,28); }
+
+.screenshot-list { margin-bottom: 0; }
+.screenshot-list li p { text-align: center; font-family: 'Sorts Mill Goudy', Times, serif; font-weight: 400; font-style: italic; font-size: 1em; }
+.screenshot-list li{ margin-bottom: 3.125em; }
+.screenshot-list li:last-child { margin-bottom: 0; }
+/* -- Fixed Arrows -- */
+#left_bar { float: left; }
+#right_bar { float: right; }
+#fixed-left-arrow, #fixed-right-arrow {
+ 	top: 239px;
+	margin-left: -65px;
+	position: absolute;
+}
+
+#fixed-right-arrow {
+	top: 239px;
+	margin-left: 15px;	
+}
+
+html.svg #fixed-left-arrow a { background: url(../images/arrow_lt_sprite.svg) 0 -50px no-repeat; width: 50px; height: 50px; display: block; }
+html.svg #fixed-right-arrow a { background: url(../images/arrow_rt_sprite.svg) 0 -50px no-repeat; width: 50px; height: 50px; display: block; }
+html.svg #fixed-left-arrow a:hover, html.svg #fixed-right-arrow a:hover { background-position: top left; }
+/* PNG fallback */
+#fixed-left-arrow a { background: url(../images/arrow_lt_sprite.png) 0 -50px no-repeat; width: 50px; height: 50px; display: block; }
+#fixed-right-arrow a { background: url(../images/arrow_rt_sprite.png) 0 -50px no-repeat; width: 50px; height: 50px; display: block; }
+#fixed-left-arrow a:hover, #fixed-right-arrow a:hover { background-position: top left; }
+
+
+
+/* .sticky { position: fixed; width: 22.333%; max-width: 310px; } */
+
+.stuck { position: fixed; top: 30px; } 
+/* #project-desc.stuck  { width: 23.776874310915%; max-width: 310px; } */
+
+/* -----------------------------------------
+   Video Project Pages
+----------------------------------------- */
+
+.black-fade { 
+	background: url(../images/outlets.png) repeat; 
+	background-color: #181818; /*-- Prevents obvious flicker to white background when transitioning--*/
+	}
+#video-project { color: #fff; }	
+#video-project h3.project-page { color: #fff; }
+#video-project a.active { color: #fff; }
+#video-project .divider { border: solid rgb(137,137,137); border-width: 1px 0 0; }
+
+/* --------------------------- 
+	Responsive Styles 
+---------------------------- */
+
+/* -- Sticky arrows and content only when window larger than 626px -- */
+
+@media only screen and (max-width: 780px) { 	
+	#project-desc.stuck  { width: 100%; max-width: none; position: static; }
+	.stuck { position: fixed; width: 100%; }
+	h3 { text-align: center; margin-top: 0.9375em; margin-bottom: 2.3333em; }
+	h3.project-page { margin: 0; padding: 0 0 1.5625em 0; }
+	h4 {display: none;}
+	img.thumbnail { display: block; margin-left: auto; margin-right: auto; }
+	
+}
+
+@media only screen and (max-width: 626px) {	
+	body { min-width: 320px; } 
+	#wrapper { padding: 0 43px; padding-bottom: 6.25em; }
+	header { margin: 0 auto; }
+	.top-bar { text-align: center; }
+	.top-bar ul { width: 100%; height: 100%; margin-bottom: 0; display: block; }
+	.top-bar ul.logo li { margin: 0 auto; margin-bottom: 2.25em; }
+	.top-bar ul.right { float: none; margin: 0; }
+	.right li { margin: 0; }
+	.top-bar ul li { display: block; float: none; line-height: 1; margin-bottom: 1.5625em;}
+
+	.top-bar section ul { clear: left; }
+	.top-bar section ul li:last-child { margin-bottom: 0; }	
+	
+	#fixed-left-arrow, #fixed-right-arrow {	top: 338px; position: fixed; }
+	#fixed-left-arrow { margin-left: -30px; }
+	#fixed-right-arrow { margin-left: 7px; }
+	
+	html.svg #fixed-left-arrow a { background: url(../images/arrow_lt50_sprite.svg) 0 -25px no-repeat; width: 25px; height: 25px; display: block; }
+	html.svg #fixed-right-arrow a { background: url(../images/arrow_rt50_sprite.svg) 0 -25px no-repeat; width: 25px; height: 25px; display: block; }
+	html.svg #fixed-left-arrow a:hover, html.svg #fixed-right-arrow a:hover { background-position: top left; }
+	/* PNG fallback */
+	#fixed-left-arrow a { background: url(../images/arrow_lt50_sprite.png) 0 -25px no-repeat; width: 25px; height: 25px; display: block; }
+	#fixed-right-arrow a { background: url(../images/arrow_rt50_sprite.png) 0 -25px no-repeat; width: 25px; height: 25px; display: block; }
+	#fixed-left-arrow a:hover, #fixed-right-arrow a:hover { background-position: top left; }
+	.stuck { position: inherit; }
+}
+
+
